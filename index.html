@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h3 class="register-heading">Please take this survey It won't take more than a minute.</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                  Start survey
+                </button>
+                <div class="row register-form">
+
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Survey</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="survey-form" action='index.html' name = "google-sheet" method="post">
+                            <div class="question-page question active">
+                              <h3>Which brand do you prefer among these?</h3>
+                              <div class="options-section">
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" id = 'option1' name="answer1" value="Apple">
+                                  <h3>Apple</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" id = 'option2' name="answer1" value="Samsung">
+                                  <h3>Samsung</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" id = 'option3' name="answer1" value="Nokia">
+                                  <h3>Nokia</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" id = 'option4' name="answer1" value="One plus">
+                                  <h3>One plus</h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="question-page question">
+                              <h3>Which brand do you prefer among these?</h3>
+                              <div class="options-section">
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer2" value="Dell">
+                                  <h3>Dell</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer2" value="HP">
+                                  <h3>HP</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer2" value="Lenovo">
+                                  <h3>Lenovo</h3>
+                                </div>
+
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer2" value="Asus">
+                                  <h3>Asus</h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="question-page question">
+                              <h3>Which brand do you prefer among these?</h3>
+                              <div class="options-section">
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer3" value="Mercedes">
+                                  <h3>Mercedes</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer3" value="Volkswagen">
+                                  <h3>Volkswagen</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer3" value="BMW">
+                                  <h3>BMW</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer3" value="Mitsubishi">
+                                  <h3>Mitsubishi</h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="question-page question">
+                              <h3>Which brand do you prefer among these?</h3>
+                              <div class="options-section">
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer4" value="Subway">
+                                  <h3>Subway</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer4" value="McDonalds">
+                                  <h3>McDonalds</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer4" value="Wendy's">
+                                  <h3>Wendy's</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer4" value="KFC">
+                                  <h3>KFC</h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="question-page question">
+                              <h3>Which brand do you prefer among these?</h3>
+                              <div class="options-section">
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer5" value="Cadbury">
+                                  <h3>Cadbury</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer5" value="Nestle">
+                                  <h3>Nestle</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer5" value="Hershey">
+                                  <h3>Hershey</h3>
+                                </div>
+                                <div class="form-group option">
+                                  <input class = 'radiobutton' type="radio" name="answer5" value="Wrigley's">
+                                  <h3>Wrigley's</h3>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="question-page">
+                              <div class="form-group">
+                                  <input type="text" name="Name" class="form-control" placeholder="Your Name*" value="" required=""/>
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
+                              </div>
+                              <div class="form-group">
+                                  <input  type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
+                              </div>
+                              <div class="form-group">
+                                  <input  type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
+                              </div>
+                            </div>
+                            <div class="thank-you">
+                              <h1>Thank you for taking part in this survey.</h1>
+                              <p>You have chosen <span id = "chosen-option"></span> as your favourite brand of mobile phones.</p>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+
+ <script>
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+var questionNo = 0;
+var questionElement = document.querySelectorAll('.question-page');
+var option = document.querySelectorAll('.radiobutton');
+var submitButton = document.querySelector('.btnSubmit');
+var thankPage = document.querySelector('.thank-you');
+var content = document.getElementById('chosen-option');
+var chosenOption =0;
+var i= 0;
+for(i=0;i<option.length;i++)
+{
+  option[i].addEventListener('click',e =>{
+    // if( i == 0)
+    // {
+    //   if (document.getElementById('option1').checked) {
+    //     chosenOption = document.getElementById('option1').value;
+    //   }
+    //   else if (document.getElementById('option2').checked){
+    //     chosenOption = document.getElementById('option2').value;
+    //   }
+    //   else if (document.getElementById('option3').checked){
+    //     chosenOption = document.getElementById('option3').value;
+    //   }
+    //   else if (document.getElementById('option4').checked){
+    //     chosenOption = document.getElementById('option4').value;
+    //   }
+    //   console.log(chosenOption);
+    // }
+    chosenOption = document.querySelector('input[name="answer1"]:checked').value;
+    console.log(chosenOption);
+    questionElement[questionNo].classList.remove("active");
+    questionNo++;
+    questionElement[questionNo].classList.add("active");
+  });
+}
+
+
+  submitButton.addEventListener('click',e =>{
+    for(i=0;i<option.length;i++)
+    {
+      questionElement[questionNo].classList.remove("active");
+    }
+    content.innerHTML = chosenOption;
+    thankPage.classList.add("active");
+
+  });
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzi49-_jF16gWnS49dZRcz6CQtbeuob92T1SAFto5lXOFfQ-TSf/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      // .then(response => location.reload())
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
