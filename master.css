@@ -5,13 +5,20 @@ body{
   background-color: black !important;
 }
 #submit-div{
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding:20px 30px;
 }
 #submit-div > h1{
-  margin-bottom:40px;
+  color:#d14daf;
+  margin-bottom:10px;
+}
+#submit-div > p{
+  font-size: 1.4vw;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 .header-font{
   font-family: 'Roboto', sans-serif;
@@ -87,9 +94,10 @@ body > h2{
   font-size: 1.8vw;
 }
 .gender-photo{
+  overflow:hidden;
   margin:20px 0;
   width:45%;
-  padding:20px 0px;
+  padding:0px 0px;
   border:4px solid #cdcccc;
   border-radius: 20px;
   display:flex;
@@ -98,12 +106,11 @@ body > h2{
   justify-content: center;
   height:auto;
 }
-.gender-photo img{
-  width:50%;
+.gender-photo label img{
+  width:60%;
   height:auto;
   margin-bottom:15px;
 }
-
 .question-img{
   margin-top:10px;
   width:90%;
@@ -137,10 +144,13 @@ label:hover{
   margin:10px !important;
 }
 .gender-photo label{
-  background-color:#10ca6b;
+  background-color:white;
   color:white;
-  width:50%;
-  height:50px;
+  margin:0;
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  height:100%;
   font-size: 1.2vw;
   font-weight: bold;
   border:0;
@@ -148,24 +158,35 @@ label:hover{
   border-radius:5px;
   text-transform: uppercase;
 }
+.gender-button{
+  height:50px;
+  width:60%;
+  background-color:#14c014;
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
 .gender-photo input{
   height:0;
   width:0;
   margin:0 !important;
 }
 .btnSubmit{
-  background-color:white;
-  color:black;
-  transition:background-color 0.3s ease-in-out,color 0.3s ease-in-out;
-  border:2px solid #19c519;
+  /* background-color:white; */
+  color:white;
+  background-color:#ffdc33;
+  border-color: #ffdc33;
+  /* transition:background-color 0.3s ease-in-out,color 0.3s ease-in-out;
+  border:2px solid #19c519; */
 }
-.btnSubmit:hover{
+/* .btnSubmit:hover{
   color:white;
   background-color: #19c519;
 }
 .btnSubmit:focus{
   outline:0;
-}
+} */
 .thank-you{
   display:none;
   padding:0 5%;
@@ -226,6 +247,7 @@ label:hover{
   .question-page label{
     font-size: 1.8vw;
   }
+
 }
 @media(max-width:768px){
   .quiz-section{
@@ -288,6 +310,9 @@ label:hover{
   #timer{
     font-size: 4.5vw;
   }
+  #submit-div > p{
+    font-size: 2.6vw;
+  }
 }
 @media (max-width:500px){
   .header-font{
@@ -317,9 +342,15 @@ label:hover{
   .question-page label{
     font-size: 3vw;
   }
-  .gender-photo label{
-    height:35px;
-    font-size: 3vw;
+  .gender-button{
+    width:70%;
+    height:30px;
+  }
+  .gender-photo label img{
+    width:70%;
+  }
+  .progress-bar{
+    font-size: 16px;
   }
   .form-group{
     width:85%;
@@ -329,6 +360,7 @@ label:hover{
     font-size: 18px;
  }
  .btnSubmit{
+   background-color: #ffdc31;
    font-size: 18px;
  }
  .thank-you p{
@@ -343,5 +375,11 @@ label:hover{
  }
  .thank-you a{
    font-size: 4.8vw;
+ }
+ #submit-div > p{
+   font-size: 3vw;
+ }
+ #submit-div > h1{
+   font-size: 6vw;
  }
 }

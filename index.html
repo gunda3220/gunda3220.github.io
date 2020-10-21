@@ -13,6 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="master.css">
+    <link rel="shortcut icon" href="Icon.png">
+    <meta property="og:image" content="Social-share-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
   </head>
   <body>
     <h1 class ="header-font" align = center><span class = "header-subfont">30 Second</span> Quiz REVEALS ALL!</h1>
@@ -29,15 +34,19 @@
           <h4 align=center>(We ask because your emotional blockers may sometimes depend on your
             gender.)</h4>
           <div class="gender-photo">
-            <img src="Man.png" alt="">
             <label>
-              <input class = 'radiobutton' type="radio" name="gender" value="Man">Man
+              <img src="Man.png" alt="">
+              <div class="gender-button">
+                <input class = 'radiobutton' type="radio" name="gender" value="Man">Man
+              </div>
             </label>
           </div>
           <div class="gender-photo">
-            <img src="woman.png" alt="">
             <label>
-              <input class = 'radiobutton' type="radio" name="gender" value="Woman">Woman
+              <img src="woman.png" alt="">
+              <div class="gender-button">
+                <input class = 'radiobutton' type="radio" name="gender" value="Woman">Woman
+              </div>
             </label>
           </div>
           <div class="question-img">
@@ -135,20 +144,22 @@
           </div>
         </div>
         <div class="question-page" id = 'submit-div'>
-          <h1 align=center>Please enter your Name and Email for results </h1>
+          <h1 align=center>It's Time To Get Your Results</h1>
+          <p align=center> Enter Your Email Address and click the button below to find out what your no.1 success blocker is,
+            where it came from and how to fix it. </p>
           <div class="form-group">
               <input type="text" name="Name" class="form-control" placeholder="Your Name*" value="" required/>
           </div>
           <div class="form-group">
-              <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required/>
+              <input type="email" name="Email" class="form-control" placeholder="Your Email *" value="" required/>
           </div>
           <div class="form-group">
-              <input  type="submit" name="submit" class="btn btn-outline-success btnSubmit" value="Login" />
+              <input  type="submit" name="submit" class="btn btn-warning btnSubmit" value="SEND ME MY RESULTS!" />
           </div>
         </div>
         <div class="question-page thank-you">
           <h1 align=center>CONGRATULATIONS! YOU HAVE SUCCESSFULLY COMPLETED OUR QUIZ</h1>
-          <p align=center>We will check your your answers and will send your results to your email you provided.</p>
+          <p align=center>We will check your answers and will send your results to your email you provided.</p>
           <div class="thank-img" id = 'wealth-img'>
             <img src="wealth.jpg" alt="">
           </div>
@@ -158,7 +169,7 @@
           <div class="thank-img" id = 'health-img'>
             <img src="health.jpg" alt="">
           </div>
-          <h1 align=center>Ready to remove your Wealth Blockers?</h1>
+          <h1 align=center>Ready to remove your <span class = 'option-text'>Wealth</span> Blockers?</h1>
           <p align=center>Watch FREE online video that will open your eyes to what's really holding you back.</p>
           <h4>HOSTED BY: ...</h4>
           <a href="https://www.google.com/" class = "btn btn-success">Watch it Now!</a>
@@ -181,7 +192,10 @@
    var wealthImage = document.getElementById('wealth-img');
    var relationImage = document.getElementById('relationship-img');
    var healthImage = document.getElementById('health-img');
+   var blockerText = document.querySelector(".option-text");
    var chosenOption = 0;
+   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+   var emailId;
    var timeoutHandle;
    var i= 0;
    var progressWidth = progress[0];
@@ -196,9 +210,11 @@
         }
         else if(chosenOption === "Relationships (True Love, Love & Connection..)"){
           relationImage.classList.add("active");
+          blockerText.innerHTML="Relationship";
         }
         else if(chosenOption === "Health (Optimal Energy, Vibrant Health..)"){
           healthImage.classList.add("active");
+          blockerText.innerHTML="Health";
         }
        }
        questionElement[questionNo].classList.remove("active");
@@ -212,43 +228,51 @@
    }
 
      submitButton.addEventListener('click',e =>{
-       for(i=0;i<questionElement.length;i++)
-       {
-         questionElement[questionNo].classList.remove("active");
-       }
-       thankPage.classList.add("active");
-       function countdown(minutes, seconds) {
-           function tick() {
-               var counter = document.getElementById("timer");
-               counter.innerHTML =
-                   "0 HRS  " + minutes.toString() + " MINS  " + (seconds < 10 ? "0" : "") + String(seconds)+" SECS";
-               seconds--;
-               if (seconds >= 0) {
-                   timeoutHandle = setTimeout(tick, 1000);
-               } else {
-                   if (minutes >= 1) {
 
-                       setTimeout(function () {
-                           countdown(minutes - 1, 59);
-                       }, 1000);
-                   }
-                   else{
-                     location.reload();
-                   }
-               }
-           }
-           tick();
-       }
+       emailId = document.querySelector('input[name="Email"]').value;
+       if(emailId.match(mailformat))
+        {
+          for(i=0;i<questionElement.length;i++)
+          {
+            questionElement[questionNo].classList.remove("active");
+          }
+          thankPage.classList.add("active");
+          function countdown(minutes, seconds) {
+              function tick() {
+                  var counter = document.getElementById("timer");
+                  counter.innerHTML =
+                      "0 HRS  " + minutes.toString() + " MINS  " + (seconds < 10 ? "0" : "") + String(seconds)+" SECS";
+                  seconds--;
+                  if (seconds >= 0) {
+                      timeoutHandle = setTimeout(tick, 1000);
+                  } else {
+                      if (minutes >= 1) {
 
-       countdown(4, 59);
+                          setTimeout(function () {
+                              countdown(minutes - 1, 59);
+                          }, 1000);
+                      }
+                      else{
+                        location.reload();
+                      }
+                  }
+              }
+              tick();
+          }
+          countdown(4, 59);
+        }
+        else
+        {
+          alert("You have entered an invalid email address!");
+        }
      });
-     const scriptURL = 'https://script.google.com/macros/s/AKfycbxbbVREvUkeTxxVUkrIMO3MJLz5GI_p3rMATAv_IpKrE-10MYZc/exec'
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbynejLV8FQ6wC7SBe0NT4rwG7_YEZtz6dLiSqGkCEx1sUZS4JA/exec'
      const form = document.forms['google-sheet']
 
      form.addEventListener('submit', e => {
        e.preventDefault()
        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-         .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+         // .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
          // .then(response => location.reload())
          .catch(error => console.error('Error!', error.message))
      })
