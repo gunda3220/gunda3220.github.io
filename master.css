@@ -16,7 +16,7 @@ body{
   margin-bottom:10px;
 }
 #submit-div > p{
-  font-size: 1.4vw;
+  font-size: 1.5vw;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -37,7 +37,7 @@ body > h2{
 }
 .progress{
   position:relative;
-  width:60%;
+  width:50%;
   margin:20px auto;
 }
 .progress-bar{
@@ -49,7 +49,7 @@ body > h2{
   background-color: white;
   position:relative;
   height:auto;
-  width:65%;
+  width:55%;
   box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
   margin:20px auto;
 }
@@ -172,8 +172,18 @@ label:hover{
   width:0;
   margin:0 !important;
 }
+.form-group{
+  width:80%;
+}
+.form-control{
+  font-size:1.4vw;
+  padding:20px 15px;
+}
 .btnSubmit{
+  font-size: 1.4vw;
   /* background-color:white; */
+  display:flex;
+  margin:0 auto;
   color:white;
   background-color:#ffdc33;
   border-color: #ffdc33;
@@ -247,7 +257,15 @@ label:hover{
   .question-page label{
     font-size: 1.8vw;
   }
-
+  .btnSubmit{
+    font-size: 2vw;
+  }
+  .form-control{
+    font-size: 2vw;
+  }
+  #submit-div > p{
+    font-size: 2vw;
+  }
 }
 @media(max-width:768px){
   .quiz-section{
@@ -291,17 +309,18 @@ label:hover{
     width:0 !important;
   }
   .form-group{
-    width:60%;
+    width:80%;
     display:flex;
     justify-content: center;
     margin:20px 0px;
   }
   .form-control{
-    height:45px;
-    font-size: 22px;
+    padding: 30px 15px;
+    font-size: 3vw;
   }
   .btnSubmit{
-    font-size: 22px;
+    padding:20px;
+    font-size: 3vw;
   }
   .thank-you p{
     font-size: 2.5vw;
@@ -314,7 +333,7 @@ label:hover{
     font-size: 4.5vw;
   }
   #submit-div > p{
-    font-size: 2.6vw;
+    font-size: 3vw;
   }
 }
 @media (max-width:500px){
