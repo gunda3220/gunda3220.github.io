@@ -253,6 +253,9 @@ label:hover{
   .quiz-section{
     width:85%;
   }
+  .gender-button{
+    height:40px;
+  }
   .progress{
     width:75%;
   }
