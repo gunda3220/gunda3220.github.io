@@ -171,7 +171,7 @@
           <h1 align=center>Ready to remove your <span class = 'option-text'>Wealth</span> Blockers?</h1>
           <p align=center>Watch FREE online video that will open your eyes to what's really holding you back.</p>
           <h4>HOSTED BY: ...</h4>
-          <a href="https://www.google.com/" class = "btn btn-success">Watch it Now!</a>
+          <a href="https://www.google.com/" class = "btn btn-success" id = 'watch-button'>Watch it Now!</a>
           <h4 align=center>AVAILABLE FOR THE NEXT:</h4>
           <div class="" id ='timer'>
 
@@ -191,6 +191,7 @@
    var wealthImage = document.getElementById('wealth-img');
    var relationImage = document.getElementById('relationship-img');
    var healthImage = document.getElementById('health-img');
+   var watchButton = document.getElementById('watch-button');
    var blockerText = document.querySelector(".option-text");
    var chosenOption = 0;
    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -206,14 +207,17 @@
         chosenOption = document.querySelector('input[name="answer2"]:checked').value;
         if(chosenOption === "Wealth (Financial Freedom, Limitless abundance..)"){
           wealthImage.classList.add("active");
+          watchButton.href = "https://www.google.com/";
         }
         else if(chosenOption === "Relationships (True Love, Love & Connection..)"){
           relationImage.classList.add("active");
           blockerText.innerHTML="Relationship";
+          watchButton.href = "https://www.yahoo.com/";
         }
         else if(chosenOption === "Health (Optimal Energy, Vibrant Health..)"){
           healthImage.classList.add("active");
           blockerText.innerHTML="Health";
+          watchButton.href = "https://www.amazon.com/";
         }
        }
        questionElement[questionNo].classList.remove("active");
